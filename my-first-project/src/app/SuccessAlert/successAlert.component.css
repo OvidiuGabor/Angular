@@ -1,0 +1,11 @@
+.alert-container{
+    text-align: center;
+    border: 1px solid greenyellow;
+}
+.alert-header{
+    color: green;
+}
+.alert-body{
+    color: white;
+    background-color: teal;
+}

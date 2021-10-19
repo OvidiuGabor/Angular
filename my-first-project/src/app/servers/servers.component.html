@@ -1,0 +1,43 @@
+<label>Server Name</label>
+<!-- <input type="text" class="form-control" (input) = "onUpdateServerName($event)">  -->
+
+<input type="text" class="form-control" [(ngModel)]="serverName"> 
+
+
+<!-- <p>{{serverName}}</p> -->
+<button 
+class="btn btn-primary" 
+[disabled]  = "!allowNewServer" 
+(click) = "onCreateServer()">Add Server</button>
+
+<!-- <p class="server-creation-p">{{serverCreationStatus}}</p> -->
+
+<p *ngIf="serverCreated; else noServer">Server was created, server name is {{serverName}}</p>
+<ng-template #noServer>
+    <p>No server was created.</p> 
+</ng-template>
+<app-server *ngFor="let server of servers"></app-server>
+
+<hr>
+<p>Assesment:</p>
+<br>
+<input 
+type="text" 
+class="form-control"
+[(ngModel)]="username">
+
+<p>{{ username }}</p>
+<button class="btn btn-secondary" [disabled] = "username === ''" (click) = "username = ''">Press-me</button>
+
+<br><br><br>
+<hr>
+<p>Assignemtn 2</p>
+<button class="btn btn-primary" (click) = "toggleText()">Display Results</button>   
+<p *ngIf="isTextVisible">Reading 1 book a day is good</p>
+
+
+
+<p *ngFor="let item of log; let i = index" 
+[ngStyle]="{backgroundColor: i >= 5 ? 'blue': 'transparent'}" 
+[ngClass]="{'p-color': i >= 5}">
+{{item}}</p>

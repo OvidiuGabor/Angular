@@ -1,0 +1,11 @@
+.alert-container{
+    text-align: center;
+    border: 1px solid red;
+}
+.alert-header{
+    color: red;
+}
+.alert-body{
+    color: white;
+    background-color: rgb(255, 94, 0);
+}
