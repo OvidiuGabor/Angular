@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Receipe } from "../models/recipe";
 
 @Component({
     selector: '<app-recipes>',
@@ -7,4 +8,10 @@ import { Component } from "@angular/core";
 })
 export class RecipesComponenet{
 
+    recipe: Receipe;
+    
+    onReciveRecipe(ev:Receipe){
+        console.log(ev)
+        this.recipe = ev;
+    }
 }
