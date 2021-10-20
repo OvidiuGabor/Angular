@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Check the Numbers Game</h2>
+      <hr>
+     <app-game-control 
+     (counterStarted) = "onCounterStarted($event)"
+     (clearData) = "onDataCleared($event)"></app-game-control>
+      <hr>
+
+      <div *ngFor="let count of numberlist">
+        <app-even *ngIf="count % 2 == 0 " [counter] ="count" ></app-even>
+        <app-odd *ngIf="count % 2 != 0 " [counter] ="count"></app-odd>
+      </div>
+    </div>
+  </div>
+</div>
