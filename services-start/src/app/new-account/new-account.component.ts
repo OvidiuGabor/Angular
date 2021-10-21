@@ -10,7 +10,10 @@ import { LoggingService } from '../shared/logging,service';
 })
 export class NewAccountComponent implements OnInit {
 
-  constructor(private loggingService: LoggingService, private accountsService: AccountsService) { }
+  constructor(private loggingService: LoggingService, private accountsService: AccountsService) {
+      this.accountsService.statusUpdates.subscribe((status:string) => alert("New Status: " + status))
+
+   }
 
   ngOnInit(): void {
   }
@@ -25,7 +28,7 @@ export class NewAccountComponent implements OnInit {
     // });
     this.accountsService.addAccount(accountName, accountStatus);
 
-    this.loggingService.logStatusChange(accountStatus)
+    //this.loggingService.logStatusChange(accountStatus)
     //console.log('A server status changed, new status: ' + accountStatus);
   }
 
