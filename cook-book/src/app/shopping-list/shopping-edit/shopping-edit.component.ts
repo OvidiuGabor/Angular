@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, ViewChild, EventEmitter, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Ingredient } from 'src/app/models/ingredient';
+import { ShoppingListService } from 'src/app/services/shopping-list.service';
 
 @Component({
   selector: '<app-shopping-edit>',
@@ -13,9 +14,7 @@ export class ShoppingEditComponent implements OnInit {
 
   newIngredient: Ingredient;
 
-  @Output() sendIngredient = new EventEmitter<Ingredient>();
-
-  constructor() { }
+  constructor(private ShoppingListService: ShoppingListService) { }
 
   ngOnInit(): void {
   }
@@ -25,7 +24,8 @@ export class ShoppingEditComponent implements OnInit {
     //check that the inputs are not an empty string
     if(this.ingredientName.nativeElement.value != "" && this.ingredientAmount.nativeElement.value != ""){
       this.newIngredient = new Ingredient(this.ingredientName.nativeElement.value, this.ingredientAmount.nativeElement.value);
-      this.sendIngredient.emit(this.newIngredient);
+      this.ShoppingListService.addIngredient(this.newIngredient);
+      
     }
 
   }
