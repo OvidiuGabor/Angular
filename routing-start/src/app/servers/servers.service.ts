@@ -1,3 +1,4 @@
+
 export class ServersService {
   private servers = [
     {
@@ -16,6 +17,7 @@ export class ServersService {
       status: 'offline'
     }
   ];
+
 
   getServers() {
     return this.servers;
@@ -41,4 +43,6 @@ export class ServersService {
       server.status = serverInfo.status;
     }
   }
+
+ 
 }
