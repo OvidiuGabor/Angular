@@ -1,13 +1,12 @@
-<app-header
-(displayRecipes) = "onDisplayRecipe($event)"
-(displayShoppingList) = "onDisplayShoppingList($event)"
-></app-header>
+<app-header></app-header>
 
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-recipes *ngIf="showRecipes == true"></app-recipes>
-            <app-shopping-list *ngIf="showShoppingList == true"></app-shopping-list>
+            <!-- <app-recipes *ngIf="showRecipes == true"></app-recipes>
+            <app-shopping-list *ngIf="showShoppingList == true"></app-shopping-list> -->
+            <router-outlet></router-outlet>
+
         </div>
     </div>
    

@@ -19,9 +19,10 @@
             </button>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="#" (click) = 'sendtoShoppingList()'>To Shopping List</a>
-                    <a href="#">Edit Recipe</a>
-                    <a href="#">Delete Recipe</a>
+                    <a style="cursor: pointer;" (click) = 'sendtoShoppingList()'>To Shopping List</a>
+                    <!-- <a style="cursor: pointer;" [routerLink]="['edit']">Edit Recipe</a> -->
+                    <a style="cursor: pointer;" (click) = onEditRecipe()>Edit Recipe</a>
+                    <a style="cursor: pointer;">Delete Recipe</a>
                 </li>
             </ul>
         </div>

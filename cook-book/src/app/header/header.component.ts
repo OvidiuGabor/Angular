@@ -8,15 +8,15 @@ import { Component, Output, EventEmitter } from "@angular/core";
 export class HeaderComponent{
 
     collapsed = true;
-    @Output() displayRecipes = new EventEmitter<boolean>();
-    @Output() displayShoppingList = new EventEmitter<boolean>();
+    // @Output() displayRecipes = new EventEmitter<boolean>();
+    // @Output() displayShoppingList = new EventEmitter<boolean>();
 
 
-    showRecipes(){
-        this.displayRecipes.emit(true)
-    }
+    // showRecipes(){
+    //     this.displayRecipes.emit(true)
+    // }
 
-    showShoppingList(){
-        this.displayShoppingList.emit(true)
-    }
+    // showShoppingList(){
+    //     this.displayShoppingList.emit(true)
+    // }
 }
