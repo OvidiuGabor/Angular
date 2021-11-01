@@ -22,7 +22,6 @@ export class RecipeListComponent implements OnInit, OnDestroy {
 
   onNewRecipe(){
     this.router.navigate(['new'], {relativeTo: this.activatedRounte})
-
   }
 
   ngOnDestroy(){
